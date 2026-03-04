@@ -9,7 +9,7 @@ def main():
     print("Hello World!")
 
     name = "sahithi A" # TODO: Insert your name between the double quotes
-    introduction = f"Hello, My name is {name} and I am a student in the CSS course. This time checking the merge conflicts in introduction" # TODO: Insert your name between the double quotes
+    introduction = f"Hello, My name is {name} and I am a student in the CSS course. checking merge conflict, commit from local" # TODO: Insert your name between the double quotes
     print(f"{name} , Welcome to the CSS course!")
     print(f"Introduction: {introduction} , Welcome to the CSS course!")
 
