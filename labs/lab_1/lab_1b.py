@@ -9,23 +9,14 @@ and prints the result to the terminal window.
 
 """
 
-from sqlalchemy import false
-
-
+ 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
-    """
-    Function that takes in two numbers and an operation (add, subtract, multiply, divide),
-    then performs the operation on the two numbers and returns the result.
 
-    Args:
-        operation (str): The operation to perform ("add", "subtract", "multiply", "divide").
-        num1 (float): The first number.
-        num2 (float): The second number.
-
-    Returns:
-        float: The result of the operation.
-    """
-
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
+        raise ValueError(
+            "[Error]: Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'."
+        )
+    
     if operation == "add":
         return num1 + num2
     elif operation == "subtract":
@@ -33,12 +24,13 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     elif operation == "multiply":
         return num1 * num2
     elif operation == "divide":
-        if num2 != 0:
-            return num1 / num2
-        else:
+        if num2 == 0:
             raise ValueError("Cannot divide by zero.")
+        return num1 / num2
     else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        raise ValueError(
+            "Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'."
+        )
 
 def main():
     print("===== Simple Calculator =====")
